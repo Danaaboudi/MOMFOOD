@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="24dp">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pageTitle"
+                app:layout_constraintBottom_toBottomOf="@id/pageTitle"
+                android:src="@drawable/ic_menu_lines" />
+
+            <ImageView
+                android:id="@+id/categories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/pageTitle"
+                app:layout_constraintBottom_toBottomOf="@id/pageTitle"
+                android:src="@drawable/ic_categories" />
+
+            <TextView
+                android:id="@+id/pageTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toEndOf="@id/menu"
+                app:layout_constraintEnd_toStartOf="@id/categories"
+                app:layout_constraintTop_toTopOf="parent"
+                android:fontFamily="@font/inter_regular"
+                android:text="Momfood"
+                android:textColor="#111211"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="4dp"
+                android:background="@drawable/background_rounded_corners"
+                android:backgroundTint="#3E7236" />
+
+            <TextView
+                android:id="@+id/search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/pageTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:fontFamily="@font/inter_regular"
+                android:text="חיפוש..."
+                android:background="@drawable/background_rounded_corners"
+                android:backgroundTint="#C8C8C8"
+                android:textColor="#5F5A5A"
+                android:textSize="15sp"
+                android:layout_marginTop="16dp"
+                android:paddingVertical="4dp"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:id="@+id/restaurantsMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="3"
+                app:layout_constraintTop_toBottomOf="@id/search"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:id="@+id/newestRestaurants"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="הכי חדשות"
+                    android:layout_weight="1"
+                    android:layout_marginHorizontal="2dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:background="@drawable/background_rounded_corners"
+                    android:backgroundTint="#C8C8C8"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/nearRestaurants"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="קרובות אליי"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_rounded_corners"
+                    android:backgroundTint="#C8C8C8"
+                    android:textColor="#000000"
+                    android:fontFamily="@font/inter_regular"
+                    android:textSize="16sp"
+                    android:layout_marginHorizontal="10dp"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:id="@+id/allRestaurants"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="כל המסעדות"
+                    android:fontFamily="@font/inter_regular"
+                    android:layout_weight="1"
+                    android:background="@drawable/background_rounded_corners"
+                    android:backgroundTint="#60AB54"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/restaurantsAllImages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                app:layout_constraintTop_toBottomOf="@id/restaurantsMenu"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="36dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="11dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/image_karla" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="קרלה מבשלת מקסיקני"
+                        android:gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="11dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/image_maman" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="מסעדת ממן - אוכל מרוקאי "
+                        android:gravity="center"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/inter_regular"
+                        android:textColor="#000000"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/popularTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="פופולרי עכשיו"
+                android:textColor="#000000"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="16sp"
+                android:background="@drawable/background_rounded_corners"
+                android:backgroundTint="#C8C8C8"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp"
+                app:layout_constraintTop_toBottomOf="@id/restaurantsAllImages"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="32dp" />
+
+            <ImageView
+                android:id="@+id/popularImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image_nona"
+                app:layout_constraintTop_toBottomOf="@id/popularTitle"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/popularImageDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/popularTime"
+                app:layout_constraintBottom_toBottomOf="@id/popularTime"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:fontFamily="@font/inter_regular"
+                android:text="איטלקייה של נונה "
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/popularTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:text="30-40 דק’"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:background="@drawable/background_rounded_corners"
+                android:backgroundTint="#C8C8C8"
+                android:paddingVertical="2dp"
+                android:paddingHorizontal="20dp"
+                app:layout_constraintTop_toBottomOf="@id/popularImage"
+                app:layout_constraintEnd_toStartOf="@id/popularImageDescription"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/desertsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="קינוחים"
+                android:textColor="#000000"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="16sp"
+                android:background="@drawable/background_rounded_corners"
+                android:backgroundTint="#C8C8C8"
+                android:paddingVertical="5dp"
+                android:paddingHorizontal="10dp"
+                app:layout_constraintTop_toBottomOf="@id/popularTime"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="32dp" />
+
+            <LinearLayout
+                android:id="@+id/desertsItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                app:layout_constraintTop_toBottomOf="@id/desertsTitle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="11dp"
+                    android:src="@drawable/image_desert_2"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:src="@drawable/image_desert_1"
+                    android:layout_marginStart="11dp"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
